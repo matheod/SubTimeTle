@@ -1,0 +1,12 @@
+{
+  "name": "SubTimeTle",
+  "description": "Edit quickly subtitle time.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "app": {
+		"launch": {
+			"web_url": "http://matheod.alwaysdata.net/SubTimeTle/index.html"
+		}
+    },
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+}

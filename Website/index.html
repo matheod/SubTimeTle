@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SubTimeTle - Edit quickly subtitle time</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="FileSaver.min.js"></script>
+<link rel="stylesheet" href="s/a.css">
+</head>
+<body>
+	<div id="a">
+		<header>
+	  	    	<a href="#" title="Go to Homepage"><strong>SubTimeTle</strong> - Edit quickly subtitle time</a>
+		    	<form id="formSubtitle"><p>File : <input type="file" id="files" multiple /><br />
+				<span id="simpleFormula">Time formula : <input type="text" id="i-formula" size="40" /><br /></span>
+				<span id="advancedFormula" style="display:none;">Time formula 1 : <input type="text" id="i-formula-1" size="40" /><br />
+				Time formula 2 : <input type="text" id="i-formula-2" size="40" /><br /></span>
+				<input type="submit" value="Generate"></p></form>
+		</header>
+		<div id="b">
+		     <article>
+				<h1>Options</h1>
+				<h3>Advanced time</h3>
+				<p><label><input type="checkbox" style="width:auto;position:relative;top:2px;" id="o-adv"> Enable</label><br />
+				Without this, the formula is apply both on start and end time subtitle. Activate this option will allow you to set two different formula for start and end time. The first input is for start formula and the second for end formula. Use <code>t1</code> and <code>t2</code> to refer respectively start and end actual time.
+				</p>
+				<h3>Put zero time for negative</h3>
+				<p><label><input type="checkbox" style="width:auto;position:relative;top:2px;" id="o-neg"> Enable</label><br />
+				If enabled, negatives times will automatically be replaced by <code>00:00:00,000</code>. Else, negatives times will be replaced by <code>99:59:59,999</code>.
+				</p>
+				<h3>Use UTF-8 charset</h3>
+				<p><label><input type="checkbox" style="width:auto;position:relative;top:2px;" id="o-utf8-i"> Enable UTF-8 for input file</label><br />
+				<label><input type="checkbox" style="width:auto;position:relative;top:2px;" id="o-utf8-o"> Enable UTF-8 for output file</label><br />
+				Use this if you have problem with accent. If disabled, charset will be ansi.
+				</p>
+			</article>
+			<aside>
+				<h4>How to use ?</h4>
+				<div id="c">
+				  	<p>Select the subtitle file you want to edit and then just write the formula of your choice to change subtitle time. Push Generate and your new subtitle file is ready!</p>
+				</div>
+				<nav>
+				<h4>Exemples</h4>
+				<ul>
+					<li>Translate subtitle by 2s<br />
+					<pre><code>t+00:00:02,000</code></pre>
+					<pre><code>t+2000</code></pre>
+					</li>
+					<li>Accelerate subtitle<br />
+					<pre><code>1.1*t</code></pre>
+					</li>
+				</ul>
+				</nav>
+				<nav>
+				<h4>Advanced Exemples</h4>
+				<ul>
+					<li>Make subtitle last longer<br />
+					<pre><code>t1</code></pre>
+					<pre><code>t2+1000</code></pre>
+					</li>
+					<li>Make last twice longer<br />
+					<pre><code>t1</code></pre>
+					<pre><code>t2+(t2-t1)</code></pre>
+					</li>
+				</ul>
+				<h4>Pro Exemple</h4>
+				<ul>
+					<li>Retard by 1 min after 1 hour<br />
+					<pre style="font-size:8px;"><code>(t>01:00:00,000)?(t+00:01:00,000):t</code></pre>
+					</li>
+				</ul>
+			</nav>
+			</aside>
+		</div>
+		<footer>
+			<p>Application by matheod - Template by <a href="http://jonas.me/" title="Profile of Jonas Jacek">Jonas Jared Jacek</a> of <a href="http://owmx.com/" title="Free HTML5 &amp; CSS3 Web Templates">owmx.com</a>.</p>
+		</footer>
+	</div>
+<script type="text/javascript" src="subtimetle.js"></script>
+</body>
+</html>
